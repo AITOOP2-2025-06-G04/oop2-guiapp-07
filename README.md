@@ -21,8 +21,8 @@ OOP2-GUIAPP-07/
 ├── my_module/           
 ├── main.py/             
 ├── src/                 
-│   ├── _pycache_/
-│   ├── lecture05_core.py/
-│   └── lecture05_gui.py/
-└── README.md/
+│   ├── _pycache_
+│   ├── lecture05_core.py
+│   └── lecture05_gui.py
+└── README.md
 ```
