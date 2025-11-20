@@ -20,7 +20,7 @@ class Lecture05App(QWidget):
         # --- GUI部品 ---
         self.label = QLabel("カメラ画像がまだありません")
         self.btn_capture = QPushButton("カメラ画像を取得")
-        self.btn_combine = QPushButton("合成して保存")
+        self.btn_combine = QPushButton("合成して画像を表示")
 
         self.btn_capture.clicked.connect(self.capture_image)
         self.btn_combine.clicked.connect(self.combine_images)
