@@ -4,7 +4,7 @@ import os
 
 def combine_google_and_capture(capture_img):
     """
-    google.png の白を capture_img で置換する。戻り値は合成済み画像。
+    google.png の白い部分に capture_img を貼り付ける（同サイズにリサイズ）
     """
     google_path = os.path.join("images", "google.png")
     google_img = cv2.imread(google_path)
@@ -13,13 +13,15 @@ def combine_google_and_capture(capture_img):
         raise FileNotFoundError(f"画像ファイルが見つかりません: {google_path}")
 
     g_height, g_width, _ = google_img.shape
-    c_height, c_width, _ = capture_img.shape
 
-    # 白色を置換
-    for y in range(g_height):
-        for x in range(g_width):
-            b, g, r = google_img[y, x]
-            if (b, g, r) == (255, 255, 255):
-                google_img[y, x] = capture_img[y % c_height, x % c_width]
+    # ★ capture_img を google.png と同じサイズへリサイズ
+    resized_capture = cv2.resize(capture_img, (g_width, g_height))
+
+    # 白色の部分だけ置換
+    white = (255, 255, 255)
+    mask = (google_img == white).all(axis=2)
+
+    # mask が True の場所を capture に置換
+    google_img[mask] = resized_capture[mask]
 
     return google_img
