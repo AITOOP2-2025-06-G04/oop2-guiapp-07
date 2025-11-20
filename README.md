@@ -13,6 +13,8 @@ Qを押して写真を撮影して、撮影して写真を表示する。
 
 
 ## ファイル構成
+
+```
 OOP2-GUIAPP-07/
 ├── images/ 
 ├── output_images/       
@@ -23,3 +25,4 @@ OOP2-GUIAPP-07/
 │   ├── lecture05_core.py/
 │   └── lecture05_gui.py/
 └── README.md/
+```
