@@ -1,5 +1,5 @@
 # main.py
-from src.lecture05_01 import lecture05_01
+from src.lecture05_gui import run_gui
 
 if __name__ == "__main__":
-    lecture05_01()
+    run_gui()
